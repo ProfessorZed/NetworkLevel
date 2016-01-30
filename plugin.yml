@@ -3,7 +3,3 @@ name: netlvls
 version: 1.0
 commands:
    rank:
-   t:
-   f:
-   s:
-   o:

@@ -32,8 +32,6 @@ import mkremins.fanciful.FancyMessage;
 public class NetworkLevels extends JavaPlugin implements Listener {
 
 
-	ArrayList<Integer> lvls = new ArrayList<Integer>();
-
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]) {
 		if (sender instanceof Player) {
 			Player p = (Player) sender;
