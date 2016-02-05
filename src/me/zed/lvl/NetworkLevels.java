@@ -1,6 +1,5 @@
 package me.zed.lvl;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import org.apache.commons.lang.StringUtils;
@@ -10,6 +9,8 @@ import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
@@ -18,6 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -27,10 +29,10 @@ import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
+import me.AdityaTD.ClusterAPI.Titles;
 import mkremins.fanciful.FancyMessage;
 
 public class NetworkLevels extends JavaPlugin implements Listener {
-
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]) {
 		if (sender instanceof Player) {
@@ -126,8 +128,8 @@ public class NetworkLevels extends JavaPlugin implements Listener {
 			}.runTaskTimer(this, 0, 20);
 		}
 	}
-	
-	public void spawnfw(Player p, Location loc){
+
+	public void spawnfw(Player p, Location loc) {
 		Firework fw = (Firework) p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.FIREWORK);
 		FireworkMeta fwmeta = fw.getFireworkMeta();
 
@@ -322,6 +324,92 @@ public class NetworkLevels extends JavaPlugin implements Listener {
 			new FancyMessage(extra).style(ChatColor.UNDERLINE).color(ChatColor.RED).tooltip(
 					info + "\n" + "\n" + extra1 + "\n" + extra2 + "\n" + extra3 + "\n" + extra4 + "\n" + "\n" + info2)
 					.send(p);
+
+		}
+		if (p.getLevel() == 125) {
+			spawnfw(p, loc);
+
+			String first = p.getDisplayName();
+			String second = ChatColor.GOLD.toString() + ChatColor.BOLD + "Has Reached Network Lv. 125!";
+			String third = ChatColor.GRAY + "You can level up by doing quests, daily voting and";
+			String forth = ChatColor.GRAY + "and buying boosters from";
+			String fifth = ChatColor.AQUA + " store.hypixel.net";
+			String extra = "--> Hover over me for more info about Network Levels <--";
+
+			String info = ChatColor.GRAY + "Click on " + ChatColor.GREEN + "My Profile" + ChatColor.GRAY + " ->"
+					+ ChatColor.GREEN + " Coin Mystery " + ChatColor.GRAY + "To view your current Coin Multiplier \n"
+					+ ChatColor.GRAY + " and more information on it.";
+
+			String info2 = ChatColor.GRAY + "What does Coin Multiplier do?" + "\n" + ChatColor.GREEN + "  -"
+					+ ChatColor.GRAY + "It increases your coin gain in any game you play.";
+
+			String extra1 = ChatColor.GREEN + "1- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 25" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "2.0x Coin Mystery";
+			String extra2 = ChatColor.GREEN + "2- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 50" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "3.0x Coin Mystery";
+			String extra3 = ChatColor.GREEN + "3- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 75" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "4.0x Coin Mystery";
+			String extra4 = ChatColor.GREEN + "4- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 100" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "5.0x Coin Mystery";
+			Bukkit.broadcastMessage("");
+			Bukkit.broadcastMessage(StringUtils.center(first, 52));
+			Bukkit.broadcastMessage(StringUtils.center(second, 52));
+			Bukkit.broadcastMessage(StringUtils.center(third, 52));
+			Bukkit.broadcastMessage(StringUtils.center(forth, 52));
+			Bukkit.broadcastMessage(StringUtils.center(fifth, 52));
+			Bukkit.broadcastMessage("");
+			for (Player online : Bukkit.getOnlinePlayers()) {
+				online.playSound(online.getLocation(), Sound.ENDERDRAGON_GROWL, 2f, 2f);
+				Titles.sendFullTitle(online, 10, 10, 10, p.getDisplayName(),
+						ChatColor.RED.toString() + ChatColor.BOLD + "Has Reached Network Lv. 125!");
+			}
+
+			new FancyMessage(extra).style(ChatColor.UNDERLINE).color(ChatColor.RED).tooltip(
+					info + "\n" + "\n" + extra1 + "\n" + extra2 + "\n" + extra3 + "\n" + extra4 + "\n" + "\n" + info2)
+					.send(p);
+		}
+		if (p.getLevel() == 150) {
+			spawnfw(p, loc);
+
+			String first = p.getDisplayName();
+			String second = ChatColor.GOLD.toString() + ChatColor.BOLD + "Has Reached Network Lv. 150!";
+			String third = ChatColor.GRAY + "You can level up by doing quests, daily voting and";
+			String forth = ChatColor.GRAY + "and buying boosters from";
+			String fifth = ChatColor.AQUA + " store.hypixel.net";
+			String extra = "--> Hover over me for more info about Network Levels <--";
+
+			String info = ChatColor.GRAY + "Click on " + ChatColor.GREEN + "My Profile" + ChatColor.GRAY + " ->"
+					+ ChatColor.GREEN + " Coin Mystery " + ChatColor.GRAY + "To view your current Coin Multiplier \n"
+					+ ChatColor.GRAY + " and more information on it.";
+
+			String info2 = ChatColor.GRAY + "What does Coin Multiplier do?" + "\n" + ChatColor.GREEN + "  -"
+					+ ChatColor.GRAY + "It increases your coin gain in any game you play.";
+
+			String extra1 = ChatColor.GREEN + "1- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 25" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "2.0x Coin Mystery";
+			String extra2 = ChatColor.GREEN + "2- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 50" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "3.0x Coin Mystery";
+			String extra3 = ChatColor.GREEN + "3- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 75" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "4.0x Coin Mystery";
+			String extra4 = ChatColor.GREEN + "4- " + ChatColor.GRAY + "When reaching Network Level" + ChatColor.GOLD
+					+ " 100" + ChatColor.GRAY + ", you'll unlock the " + ChatColor.GREEN + "5.0x Coin Mystery";
+			Bukkit.broadcastMessage("");
+			Bukkit.broadcastMessage(StringUtils.center(first, 52));
+			Bukkit.broadcastMessage(StringUtils.center(second, 52));
+			Bukkit.broadcastMessage(StringUtils.center(third, 52));
+			Bukkit.broadcastMessage(StringUtils.center(forth, 52));
+			Bukkit.broadcastMessage(StringUtils.center(fifth, 52));
+			Bukkit.broadcastMessage("");
+			for (Player online : Bukkit.getOnlinePlayers()) {
+				online.playSound(online.getLocation(), Sound.ENDERDRAGON_GROWL, 2f, 2f);
+				Titles.sendTitle(online, 20, 20, 20, p.getDisplayName(),
+						ChatColor.RED.toString() + ChatColor.BOLD + "Has Reached Network Lv. 150!");
+			}
+
+			new FancyMessage(extra).style(ChatColor.UNDERLINE).color(ChatColor.RED).tooltip(
+					info + "\n" + "\n" + extra1 + "\n" + extra2 + "\n" + extra3 + "\n" + extra4 + "\n" + "\n" + info2)
+					.send(p);
 		}
 	}
+
 }
